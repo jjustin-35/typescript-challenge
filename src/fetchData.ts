@@ -7,3 +7,9 @@
 
 // 請在下方寫下你的程式碼
 
+export const fetchData = async (url: string) => {
+  const resp = await fetch(url);
+  const data: Record<string, any> = await resp.json();
+
+  return data;
+};

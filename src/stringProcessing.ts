@@ -9,5 +9,12 @@
  * @returns - 回傳轉換後的大寫字串
  */
 export function toUpperCase(str: string): string {
-    // 請在此處寫下你的程式碼
+    const strArr = str.split('');
+    const transformedStr = strArr.map((str) => {
+        const unicode = str.charCodeAt(0);
+        const upperUnicode = unicode - 32;
+        return String.fromCharCode(upperUnicode);
+    }).join('');
+
+    return transformedStr;
 }

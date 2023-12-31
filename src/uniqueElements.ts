@@ -6,4 +6,13 @@
  */
 export function uniqueElements(array: number[]): number[] {
     // 請在此處寫下你的程式碼
+    const sortedArr = array.sort((a, b) => a - b);
+    const result = sortedArr.reduce<number[]>((arr, item, idx) => {
+        if (item !== sortedArr[idx - 1]) {
+            return [...arr, item];
+        }
+        return arr;
+    }, []);
+
+    return result;
 }
